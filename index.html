@@ -15,7 +15,42 @@
   </head>
   <body>
     <main>
-      <div class="container"></div>
+      <div class="container">
+        <div class="age-calculator">
+          <form>
+            <div class="flex">
+              <div class="form-group">
+                <label for="days">day</label>
+                <input type="text" name="" id="days" />
+              </div>
+              <div class="form-group">
+                <label for="months">month</label>
+                <input type="text" name="" id="months" />
+              </div>
+              <div class="form-group">
+                <label for="years">year</label>
+                <input type="text" name="" id="years" />
+              </div>
+            </div>
+
+            <div class="divider-line">
+              <button class="round button--fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
+                  <g fill="none" stroke="#FFF" stroke-width="2">
+                    <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <div class="age">
+            <div><span class="ascent" data-type="years">--</span>&nbsp;years</div>
+            <div><span class="ascent" data-type="months">--</span>&nbsp;months</div>
+            <div><span class="ascent" data-type="days">--</span>&nbsp;days</div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
