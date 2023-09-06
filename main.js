@@ -1,36 +1,62 @@
-const yearsOut = document.querySelector('span[data-type="years"]');
-const monthsOut = document.querySelector('span[data-type="months"]');
-const daysOut = document.querySelector('span[data-type="days"]');
+const yearsOut = document.querySelector('span[data-type="yearsValue"]');
+const monthsOut = document.querySelector('span[data-type="monthsValue"]');
+const daysOut = document.querySelector('span[data-type="daysValue"]');
 
-const daysInput = document.getElementById('days');
-const monthsInput = document.getElementById('months');
-const yearsInput = document.getElementById('years');
+const form = document.querySelector('.age-form');
+const inputs = {
+  days: document.getElementById('days'),
+  months: document.getElementById('months'),
+  years: document.getElementById('years'),
+};
+const errors = {
+  day: document.querySelector('.dayError'),
+  month: document.querySelector('.monthError'),
+  year: document.querySelector('.yearError'),
+};
 
-const dayError = document.querySelector('.dayError');
-const monthError = document.querySelector('.monthError');
-const yearError = document.querySelector('.yearError');
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+const currentMonth = currentDate.getMonth() + 1;
+const currentDay = currentDate.getDate();
 
-function validateDays() {
-  let error = '';
-  let days = daysInput.value;
-
-  dayError.innerText = error;
+function getDaysOfMonth(year, month) {
+  const nextMonth = new Date(year, month, 1);
+  const monthToGetDays = new Date(nextMonth - 1);
+  return monthToGetDays.getDate();
 }
 
-function validateMonths() {
-  let error = '';
-  let months = monthsInput.value;
-
-  monthError.innerText = error;
+function isNumeric(value) {
+  return !Number.isNaN(value) || value !== 0;
 }
 
-function validateYears() {
-  let error = '';
-  let years = yearsInput.value;
-
-  yearError.innerText = error;
+function showError(field, message) {
+  errors[field].innerText = message;
 }
 
-daysInput.addEventListener('blur', validateDays);
-monthsInput.addEventListener('blur', validateMonths);
-yearsInput.addEventListener('blur', validateYears);
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const daysValue = +inputs.days.value;
+  const monthsValue = +inputs.months.value;
+  const yearsValue = +inputs.years.value;
+  console.log(daysValue);
+  console.log(monthsValue);
+  console.log(yearsValue);
+
+  if (!isNumeric(daysValue)) {
+    showError('day', 'Fill it with number');
+  } else if (!isNumeric(monthsValue)) {
+    showError('month', 'Fill it with number');
+  } else if (!isNumeric(yearsValue)) {
+    showError('year', 'Fill it with number');
+  } else if (yearsValue > currentYear) {
+    showError('year', 'Must be in the past');
+  } else if ((monthsValue > currentMonth && currentYear === yearsValue) || monthsValue > 12 || monthsValue < 1) {
+    showError('month', 'Invalid month');
+  } else if (daysValue > getDaysOfMonth(yearsValue, monthsValue) || daysValue < 1) {
+    showError('day', 'Invalid number of daysValue');
+  }
+});
+
+errors.day.innerText = '';
+showError('day', 'Error test');
