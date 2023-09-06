@@ -20,7 +20,7 @@
 }
 
 html {
-  font-family: system-ui;
+  font-family: var(--ff-main);
   line-height: 1.5;
 }
 
@@ -37,7 +37,7 @@ main {
 button {
   cursor: pointer;
   border: none;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .round {
@@ -55,9 +55,12 @@ button {
   background-color: var(--clr-neutral-offblack);
 }
 
+.ascent {
+  color: var(--clr-purple);
+}
+
 .container {
-  max-width: 900px;
-  padding-inline: 1rem;
+  width: min(100% - 1rem, 700px);
   margin-inline: auto;
 }
 
@@ -70,12 +73,35 @@ button {
 
 form .flex {
   display: flex;
+  align-items: flex-start;
   gap: 1.5rem;
 }
 
 .form-group {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.35rem;
+}
+
+.form-group.invalid {
+  color: var(--clr-red-light);
+}
+
+.form-group.invalid input {
+  border: 1px solid var(--clr-red-light);
+}
+
+.form-group.invalid label {
+  color: var(--clr-red-light);
+}
+
+.error {
+  display: none;
+}
+
+.form-group.invalid .error {
+  font-style: italic;
+  font-size: 0.75rem;
+  display: block;
 }
 
 .form-group > input {
@@ -86,7 +112,7 @@ form .flex {
 input[type='text'] {
   font-size: 2rem;
   font-weight: 700;
-  padding: 0.75rem;
+  padding: 1.25rem 0.75rem;
   border: 1px solid var(--clr-neutral-light-grey);
   border-radius: 0.75rem;
 }
@@ -105,6 +131,7 @@ label {
   position: relative;
   display: flex;
   justify-content: center;
+  margin: 2.5rem 0;
 }
 
 .divider-line > * {
@@ -120,4 +147,18 @@ label {
   height: 1px;
   background-color: var(--clr-neutral-light-grey);
   z-index: 1;
+}
+
+.age > div {
+  color: var(--clr-neutral-offblack);
+  font-size: 4rem;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1;
+}
+
+@media (width > 550px) {
+  .divider-line {
+    justify-content: flex-end;
+  }
 }

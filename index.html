@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css" />
     <script src="/main.js" defer></script>
-    <title>My site</title>
+    <title>Age calculator</title>
   </head>
   <body>
     <main>
@@ -21,15 +18,18 @@
             <div class="flex">
               <div class="form-group">
                 <label for="days">day</label>
-                <input type="text" name="" id="days" />
+                <input type="text" name="days" id="days" placeholder="DD" required maxlength="2" />
+                <div class="error dayError">Invalid day</div>
               </div>
               <div class="form-group">
                 <label for="months">month</label>
-                <input type="text" name="" id="months" />
+                <input type="text" name="months" id="months" placeholder="MM" required maxlength="2" />
+                <div class="error monthError">Invalid month</div>
               </div>
               <div class="form-group">
                 <label for="years">year</label>
-                <input type="text" name="" id="years" />
+                <input type="text" name="years" id="years" placeholder="YYYY" required maxlength="4" />
+                <div class="error yearError">Must be in the past</div>
               </div>
             </div>
 
