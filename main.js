@@ -58,5 +58,5 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-errors.day.innerText = '';
-showError('day', 'Error test');
+console.log(errors.day);
+errors.day.innerHTML = 'Ahoj pepo';

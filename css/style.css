@@ -95,7 +95,7 @@ form .flex {
 }
 
 .error {
-  display: none;
+  display: block;
 }
 
 .form-group.invalid .error {
