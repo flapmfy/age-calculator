@@ -1,4 +1,14 @@
 :root {
+  --clr-purple: hsl(259, 100%, 65%);
+  --clr-red-light: hsl(0, 100%, 67%);
+
+  --clr-neutral-white: hsl(0, 0%, 100%);
+  --clr-neutral-offwhite: hsl(0, 0%, 97%);
+  --clr-neutral-light-grey: hsl(0, 0%, 86%);
+  --clr-neutral-smokey-grey: hsl(0, 1%, 44%);
+  --clr-neutral-offblack: hsl(0, 0%, 8%);
+
+  --ff-main: 'Poppins', sans-serif;
 }
 
 *,
@@ -32,23 +42,7 @@ img {
 }
 
 .container {
-  max-width: 800px;
-  padding-inline: 2rem;
+  max-width: 700px;
+  padding-inline: 1rem;
   margin-inline: auto;
-}
-
-.primary-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.primary-nav > ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.primary-nav a {
-  text-decoration: none;
 }
