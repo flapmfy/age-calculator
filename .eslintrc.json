@@ -9,6 +9,8 @@
   },
   "rules": {
     "linebreak-style": ["error", "windows"],
-    "max-len": "off"
+    "max-len": "off",
+    "no-restricted-syntax": "off",
+    "no-param-reassign": "off"
   }
 }

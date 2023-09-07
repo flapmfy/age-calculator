@@ -95,13 +95,10 @@ form .flex {
 }
 
 .error {
+  color: var(--clr-red-light);
   display: block;
-}
-
-.form-group.invalid .error {
   font-style: italic;
   font-size: 0.75rem;
-  display: block;
 }
 
 .form-group > input {
@@ -154,7 +151,7 @@ label {
   font-size: 4rem;
   font-weight: 800;
   font-style: italic;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 @media (width > 550px) {
